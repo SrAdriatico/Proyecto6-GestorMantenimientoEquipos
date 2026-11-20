@@ -1,8 +1,7 @@
 #include <iostream>
 #include "gestor.h"
 
-// Busca el mantenimiento ACTIVO (no finalizado) de un equipo.
-// Devuelve su posicion en el vector, o -1 si no tiene ninguno activo
+// Devuelve la posicion del mantenimiento sin finalizar de ese equipo, o -1 si no tiene
 int buscarMantActivo(vector<Mantenimiento> &mants, int codigoEquipo) {
     for (int i = 0; i < mants.size(); i++) {
         if (mants[i].codigoEquipo == codigoEquipo && !mants[i].finalizado) {
@@ -16,14 +15,14 @@ void registrarMantenimiento(vector<Equipo> &equipos, vector<Mantenimiento> &mant
     cout << "\n--- REGISTRAR MANTENIMIENTO ---\n";
     int codigo = leerEntero("Codigo del equipo: ", 1, 99999);
 
-    // Validacion: el equipo debe existir
+    // el equipo tiene que existir
     int pos = buscarPorCodigo(equipos, codigo);
     if (pos == -1) {
         cout << "Error: no existe un equipo con ese codigo.\n";
         return;
     }
 
-    // Validacion: no puede tener otro mantenimiento activo
+    // solo se permite un mantenimiento activo por equipo
     if (buscarMantActivo(mants, codigo) != -1) {
         cout << "Error: este equipo ya tiene un mantenimiento activo.\n";
         return;
@@ -38,13 +37,13 @@ void registrarMantenimiento(vector<Equipo> &equipos, vector<Mantenimiento> &mant
         m.tipo = "correctivo";
     }
     m.descripcion = leerTexto("Descripcion: ");
-    // Validacion: dias no negativos (leerEntero no acepta negativos)
+    // leerEntero ya rechaza negativos, asi se cumple la validacion de los dias
     m.diasFueraServicio = leerEntero("Dias fuera de servicio estimados (0-365): ", 0, 365);
     m.finalizado = false;
 
     mants.push_back(m);
 
-    // Control de estado: el equipo pasa a "en mantenimiento"
+    // el equipo pasa a "en mantenimiento" y suma uno a su contador
     equipos[pos].estado = "en mantenimiento";
     equipos[pos].mantenimientos++;
 
@@ -62,7 +61,7 @@ void finalizarMantenimiento(vector<Equipo> &equipos, vector<Mantenimiento> &mant
         return;
     }
 
-    // Validacion: debe existir un mantenimiento activo (ni inexistente ni ya finalizado)
+    // si no hay uno activo, no hay nada que finalizar (no existe o ya termino)
     int idx = buscarMantActivo(mants, codigo);
     if (idx == -1) {
         cout << "Error: este equipo no tiene un mantenimiento activo para finalizar.\n";
@@ -74,7 +73,7 @@ void finalizarMantenimiento(vector<Equipo> &equipos, vector<Mantenimiento> &mant
     mants[idx].diasFueraServicio = leerEntero("Dias reales fuera de servicio (0-365): ", 0, 365);
     mants[idx].finalizado = true;
 
-    // Control de estado: se elige el nuevo estado del equipo
+    // al terminar, el usuario decide si el equipo queda operativo o fuera de servicio
     cout << "Nuevo estado del equipo: 1. Operativo  2. Fuera de servicio\n";
     if (leerEntero("Opcion: ", 1, 2) == 1) {
         equipos[pos].estado = "operativo";
