@@ -1,7 +1,7 @@
 #include <iostream>
 #include "gestor.h"
 
-// Muestra un solo equipo (se reutiliza en busquedas y consultas)
+// Imprime un equipo en una sola linea (lo usan la busqueda y las consultas)
 void mostrarUnEquipo(Equipo e) {
     cout << "[" << e.codigo << "] " << e.nombre
          << " | Tipo: " << e.tipo
@@ -21,8 +21,8 @@ void mostrarEquipos(vector<Equipo> &equipos) {
     }
 }
 
-// Muestra los tipos permitidos y devuelve el elegido.
-// Usar una lista fija evita que un mismo tipo quede escrito de varias formas
+// Los tipos salen de una lista fija para que no queden escritos de varias formas
+// y el informe los cuente bien
 string elegirTipo() {
     cout << "Tipos: 1. Computador  2. Impresora  3. Instrumento de medicion\n";
     cout << "       4. Proyector   5. Equipo de red  6. Otro\n";
@@ -42,7 +42,7 @@ void registrarEquipo(vector<Equipo> &equipos) {
     Equipo e;
     e.codigo = leerEntero("Codigo (1-99999): ", 1, 99999);
 
-    // Validacion: no permitir codigos repetidos
+    // el codigo no se puede repetir
     if (buscarPorCodigo(equipos, e.codigo) != -1) {
         cout << "Error: ya existe un equipo con el codigo " << e.codigo << ".\n";
         return;
@@ -51,7 +51,7 @@ void registrarEquipo(vector<Equipo> &equipos) {
     e.nombre = leerTexto("Nombre: ");
     e.tipo = elegirTipo();
     e.ubicacion = leerTexto("Ubicacion: ");
-    e.estado = "operativo";     // todo equipo nuevo empieza operativo
+    e.estado = "operativo";     // un equipo nuevo siempre empieza operativo
     e.mantenimientos = 0;
 
     equipos.push_back(e);
@@ -61,7 +61,7 @@ void registrarEquipo(vector<Equipo> &equipos) {
 void buscarEquipo(vector<Equipo> &equipos) {
     cout << "\nBuscar por: 1. Codigo  2. Nombre  3. Tipo\n";
     int criterio = leerEntero("Opcion: ", 1, 3);
-    int encontrados = 0;   // contador
+    int encontrados = 0;   // cuantos resultados hay
 
     if (criterio == 1) {
         int codigo = leerEntero("Codigo: ", 1, 99999);
