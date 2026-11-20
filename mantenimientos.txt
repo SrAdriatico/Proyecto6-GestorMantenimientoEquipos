@@ -1,0 +1,76 @@
+101;preventivo;Revision preventiva programada;8;1
+101;preventivo;Calibracion de rutina;6;1
+102;correctivo;Falla de encendido;2;1
+102;preventivo;Actualizacion de firmware;2;1
+102;preventivo;Limpieza y revision general;2;1
+102;preventivo;Verificacion de conexiones;3;1
+102;correctivo;Reparacion de cableado interno;10;0
+103;preventivo;Backup y revision de configuracion;2;1
+103;preventivo;Backup y revision de configuracion;8;1
+103;preventivo;Backup y revision de configuracion;5;1
+103;preventivo;Actualizacion de firmware;2;1
+103;correctivo;Reparacion de cableado interno;5;1
+103;preventivo;Actualizacion de firmware;1;1
+103;correctivo;Sobrecalentamiento detectado;16;1
+106;preventivo;Limpieza y revision general;5;1
+106;correctivo;No enciende;5;1
+107;correctivo;Reparacion de cableado interno;3;1
+107;preventivo;Revision preventiva programada;6;1
+107;correctivo;Sobrecalentamiento detectado;4;1
+107;preventivo;Verificacion de conexiones;4;1
+109;preventivo;Backup y revision de configuracion;6;1
+109;correctivo;Falla de encendido;1;1
+109;correctivo;Cambio de pieza danada;20;1
+111;preventivo;Revision preventiva programada;6;1
+111;preventivo;Lubricacion de partes moviles;6;1
+113;preventivo;Revision preventiva programada;2;0
+115;preventivo;Backup y revision de configuracion;4;0
+117;correctivo;Sobrecalentamiento detectado;8;0
+120;correctivo;Error de lectura o escritura;1;1
+120;preventivo;Lubricacion de partes moviles;2;1
+120;correctivo;No enciende;7;1
+120;correctivo;Sobrecalentamiento detectado;8;1
+122;preventivo;Verificacion de conexiones;6;1
+124;preventivo;Verificacion de conexiones;8;1
+124;preventivo;Calibracion de rutina;3;1
+126;correctivo;Pantalla no responde;9;1
+127;preventivo;Actualizacion de firmware;8;1
+127;correctivo;Pantalla no responde;8;1
+127;correctivo;Reparacion de cableado interno;3;1
+127;correctivo;Ruido anormal en el equipo;3;1
+127;preventivo;Limpieza y revision general;2;1
+127;correctivo;Pantalla no responde;7;1
+127;preventivo;Revision preventiva programada;1;1
+130;preventivo;Revision preventiva programada;5;1
+130;correctivo;Sobrecalentamiento detectado;6;1
+130;preventivo;Verificacion de conexiones;3;1
+130;preventivo;Lubricacion de partes moviles;8;1
+130;correctivo;Ruido anormal en el equipo;3;0
+131;correctivo;Pantalla no responde;1;1
+131;preventivo;Actualizacion de firmware;1;1
+131;preventivo;Actualizacion de firmware;3;1
+131;preventivo;Calibracion de rutina;1;1
+133;correctivo;Ruido anormal en el equipo;9;0
+134;correctivo;Reemplazo de fuente de poder;2;1
+134;correctivo;Falla de encendido;4;1
+134;preventivo;Cambio de filtros y limpieza interna;1;1
+134;preventivo;Backup y revision de configuracion;1;1
+134;preventivo;Backup y revision de configuracion;6;1
+134;correctivo;Ruido anormal en el equipo;4;1
+134;correctivo;Cambio de pieza danada;8;1
+134;correctivo;Ruido anormal en el equipo;8;1
+136;correctivo;Sobrecalentamiento detectado;5;1
+137;correctivo;Sobrecalentamiento detectado;8;1
+137;preventivo;Verificacion de conexiones;2;1
+138;preventivo;Backup y revision de configuracion;6;1
+138;preventivo;Revision preventiva programada;7;1
+138;preventivo;Revision preventiva programada;5;1
+138;preventivo;Actualizacion de firmware;6;1
+139;preventivo;Cambio de filtros y limpieza interna;3;1
+139;correctivo;Reemplazo de fuente de poder;12;1
+140;correctivo;No enciende;7;1
+140;preventivo;Actualizacion de firmware;4;1
+140;preventivo;Verificacion de conexiones;7;1
+140;preventivo;Verificacion de conexiones;4;1
+140;preventivo;Lubricacion de partes moviles;2;1
+140;correctivo;Reparacion de cableado interno;1;1

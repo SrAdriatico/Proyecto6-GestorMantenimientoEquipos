@@ -1,0 +1,40 @@
+101;Computador Dell OptiPlex;Computador;Sala 1;operativo;2
+102;Osciloscopio Tektronix;Instrumento de medicion;Lab Electronica;en mantenimiento;5
+103;Impresora 3D Creality;Impresora;Lab Prototipos;fuera de servicio;7
+104;Impresora Multifuncional Canon;Impresora;Auditorio Principal;operativo;0
+105;Laptop HP EliteBook;Computador;Lab Redes;operativo;0
+106;Monitor Dell UltraSharp;Computador;Sala de Sistemas 1;operativo;2
+107;Servidor HP ProLiant;Equipo de red;Sala 1;operativo;4
+108;Patch Panel 24 Puertos;Equipo de red;Sala de Profesores;operativo;0
+109;Router TP-Link;Equipo de red;Auditorio Principal;fuera de servicio;3
+110;Laptop Lenovo ThinkPad;Computador;Sala de Sistemas 2;operativo;0
+111;Impresora HP LaserJet;Impresora;Lab Redes;operativo;2
+112;Proyector Epson PowerLite;Proyector;Sala de Profesores;operativo;0
+113;Computador HP ProDesk;Computador;Sala 1;en mantenimiento;1
+114;Impresora Epson EcoTank;Impresora;Sala de Profesores;operativo;0
+115;Camara de Seguridad;Otro;Biblioteca;en mantenimiento;1
+116;Computador Acer Aspire;Computador;Sala 3;operativo;0
+117;Switch Cisco Catalyst;Equipo de red;Sala 2;en mantenimiento;1
+118;Aire Acondicionado Split;Otro;Lab Electronica;operativo;0
+119;Pinza Amperimetrica;Instrumento de medicion;Sala 3;operativo;0
+120;Multimetro Fluke;Instrumento de medicion;Lab Redes;operativo;4
+121;Impresora Epson L3250;Impresora;Lab Prototipos;operativo;0
+122;Proyector BenQ;Proyector;Lab Quimica;operativo;1
+123;Access Point Ubiquiti;Equipo de red;Decanatura Ingenieria;operativo;0
+124;Pantalla de Proyeccion Electrica;Proyector;Lab Fisica;operativo;2
+125;Impresora Brother DCP;Impresora;Sala 2;operativo;0
+126;Tablero Digital Interactivo;Otro;Lab Quimica;fuera de servicio;1
+127;Balanza de Precision;Instrumento de medicion;Sala de Profesores;operativo;7
+128;Generador de Funciones;Instrumento de medicion;Sala de Sistemas 2;operativo;0
+129;Computador Lenovo ThinkCentre;Computador;Lab Electronica;operativo;0
+130;Fuente de Poder Regulada;Instrumento de medicion;Auditorio Principal;en mantenimiento;5
+131;Computador Acer Veriton;Computador;Sala 1;operativo;4
+132;Firewall Fortinet;Equipo de red;Sala 2;operativo;0
+133;Microscopio Digital;Instrumento de medicion;Sala 2;en mantenimiento;1
+134;Estabilizador de Voltaje;Otro;Biblioteca;operativo;8
+135;Proyector Sony VPL;Proyector;Lab Electronica;operativo;0
+136;Analizador de Espectro;Instrumento de medicion;Lab Quimica;operativo;1
+137;Impresora 3D Ender;Impresora;Sala 3;operativo;2
+138;Laptop Dell Latitude;Computador;Sala de Sistemas 2;operativo;4
+139;Laptop Asus VivoBook;Computador;Auditorio Principal;fuera de servicio;2
+140;UPS APC;Otro;Sala de Profesores;operativo;6

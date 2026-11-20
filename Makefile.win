@@ -1,0 +1,46 @@
+# Project: ProyectoMantenimientoC++
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = validaciones.o archivos.o equipos.o main.o consultas.o mantenimientos.o reportes.o
+LINKOBJ  = validaciones.o archivos.o equipos.o main.o consultas.o mantenimientos.o reportes.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = ProyectoMantenimientoC++.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+validaciones.o: validaciones.cpp
+	$(CPP) -c validaciones.cpp -o validaciones.o $(CXXFLAGS)
+
+archivos.o: archivos.cpp
+	$(CPP) -c archivos.cpp -o archivos.o $(CXXFLAGS)
+
+equipos.o: equipos.cpp
+	$(CPP) -c equipos.cpp -o equipos.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+consultas.o: consultas.cpp
+	$(CPP) -c consultas.cpp -o consultas.o $(CXXFLAGS)
+
+mantenimientos.o: mantenimientos.cpp
+	$(CPP) -c mantenimientos.cpp -o mantenimientos.o $(CXXFLAGS)
+
+reportes.o: reportes.cpp
+	$(CPP) -c reportes.cpp -o reportes.o $(CXXFLAGS)
