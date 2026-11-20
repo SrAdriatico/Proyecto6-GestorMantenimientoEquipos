@@ -2,14 +2,12 @@
 #include <fstream>
 #include "gestor.h"
 
-// Rangos de frecuencia de mantenimiento (definidos por el equipo):
-//   Baja:  0 a 2 mantenimientos
-//   Media: 3 a 5 mantenimientos
-//   Alta:  6 o mas mantenimientos
+// Rangos de frecuencia que definimos como equipo (si se quieren cambiar, es aqui):
+//   baja 0-2 mantenimientos, media 3-5, alta 6 o mas
 const int LIMITE_BAJA = 2;
 const int LIMITE_MEDIA = 5;
 
-// Guarda un reporte en un archivo de texto
+// Guarda el texto de un reporte en un archivo .txt
 void guardarReporte(string nombreArchivo, string contenido) {
     ofstream archivo(nombreArchivo.c_str());
     archivo << contenido;
@@ -24,10 +22,10 @@ void generarRanking(vector<Equipo> &equipos) {
         return;
     }
 
-    // Copia para no desordenar la lista original
+    // se ordena una copia para no alterar el orden de la lista original
     vector<Equipo> copia = equipos;
 
-    // Ordenamiento burbuja de mayor a menor numero de mantenimientos
+    // burbuja: el que mas mantenimientos tiene queda de primero
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - 1 - i; j++) {
             if (copia[j].mantenimientos < copia[j + 1].mantenimientos) {
@@ -38,12 +36,12 @@ void generarRanking(vector<Equipo> &equipos) {
         }
     }
 
-    int totalMants = 0;   // acumulador
+    int totalMants = 0;   // suma de los mantenimientos de todos los equipos
     for (int i = 0; i < n; i++) {
         totalMants += copia[i].mantenimientos;
     }
 
-    int limite = 10;      // mostramos el top 10
+    int limite = 10;      // top 10 (o menos, si hay pocos equipos)
     if (n < 10) {
         limite = n;
     }
@@ -64,11 +62,11 @@ void generarInforme(vector<Equipo> &equipos) {
     int n = equipos.size();
     int operativos = 0, enMant = 0, fuera = 0;   // contadores por estado
     int baja = 0, media = 0, alta = 0;           // contadores por frecuencia
-    vector<string> tipos;                        // tipos encontrados
-    vector<int> cantPorTipo;                     // cuantos hay de cada tipo
+    // vectores paralelos: tipos[j] es un tipo y cantPorTipo[j] cuantos equipos tiene
+    vector<string> tipos;
+    vector<int> cantPorTipo;
 
     for (int i = 0; i < n; i++) {
-        // Clasificacion por estado
         if (equipos[i].estado == "operativo") {
             operativos++;
         } else if (equipos[i].estado == "en mantenimiento") {
@@ -77,7 +75,6 @@ void generarInforme(vector<Equipo> &equipos) {
             fuera++;
         }
 
-        // Clasificacion por frecuencia
         int m = equipos[i].mantenimientos;
         if (m <= LIMITE_BAJA) {
             baja++;
@@ -87,7 +84,7 @@ void generarInforme(vector<Equipo> &equipos) {
             alta++;
         }
 
-        // Clasificacion por tipo: buscamos si el tipo ya esta en la lista
+        // si el tipo ya esta en la lista solo se suma, si no se agrega
         int pos = -1;
         for (int j = 0; j < tipos.size(); j++) {
             if (tipos[j] == equipos[i].tipo) {
