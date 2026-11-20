@@ -2,7 +2,7 @@
 #include <fstream>
 #include "gestor.h"
 
-// Parte una linea tipo "101;Dell;Computador;..." en sus campos
+// Corta una linea como "101;Dell;Computador;..." en pedazos usando el ";"
 vector<string> separar(string linea) {
     vector<string> campos;
     string actual = "";
@@ -14,14 +14,14 @@ vector<string> separar(string linea) {
             actual += linea[i];
         }
     }
-    campos.push_back(actual);   // el ultimo campo no termina en ';'
+    campos.push_back(actual);   // el ultimo campo no trae ";" al final, por eso se agrega aparte
     return campos;
 }
 
-// Lee equipos.txt y mantenimientos.txt al iniciar el programa
+// Lee equipos.txt y mantenimientos.txt al iniciar y llena los vectores
 void cargarDatos(vector<Equipo> &equipos, vector<Mantenimiento> &mants) {
     string linea;
-    int invalidas = 0;   // contador de lineas con formato malo
+    int invalidas = 0;   // lineas que no tienen el formato correcto
 
     ifstream archEquipos("equipos.txt");
     if (!archEquipos) {
@@ -77,7 +77,7 @@ void cargarDatos(vector<Equipo> &equipos, vector<Mantenimiento> &mants) {
     }
 }
 
-// Reescribe los dos archivos con lo que hay en los vectores
+// Reescribe los dos archivos completos con lo que hay en los vectores
 void guardarDatos(vector<Equipo> &equipos, vector<Mantenimiento> &mants) {
     ofstream archEquipos("equipos.txt");
     for (int i = 0; i < equipos.size(); i++) {
@@ -91,7 +91,7 @@ void guardarDatos(vector<Equipo> &equipos, vector<Mantenimiento> &mants) {
     for (int i = 0; i < mants.size(); i++) {
         archMants << mants[i].codigoEquipo << ";" << mants[i].tipo << ";"
                   << mants[i].descripcion << ";" << mants[i].diasFueraServicio << ";"
-                  << mants[i].finalizado << "\n";   // el bool se guarda como 1 o 0
+                  << mants[i].finalizado << "\n";   // el bool queda como 1 o 0
     }
     archMants.close();
 }
